@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace SuperShopMVVM.ViewModels
@@ -62,21 +63,26 @@ namespace SuperShopMVVM.ViewModels
         // Methods
         private async void LoadProductsAsync()
         {
-            //if (Connectivity.NetworkAccess != NetworkAccess.Internet)
-            //{
-            //    Device.BeginInvokeOnMainThread(async () =>
-            //    {
-            //        await App.Current.MainPage.DisplayAlert("Error", "Check internet connection", "Accept");
-            //    });
-            //    return;
-            //}
+
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await App.Current.MainPage.DisplayAlert(
+                        "Error", 
+                        "Check internet connection", 
+                        "Accept");
+                });
+                return;
+            }
 
             IsRunning = true;
 
             string url = App.Current.Resources["UrlAPI"].ToString();
 
             Response response = await _apiService.GetListAsync<ProductResponse>(url, "/api", "/Products/GetProducts");
-
+            
             IsRunning = false;
 
             if (!response.IsSuccess)
