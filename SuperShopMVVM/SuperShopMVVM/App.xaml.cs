@@ -35,6 +35,7 @@ namespace SuperShopMVVM
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
 
             containerRegistry.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProductDetailPage, ProductDetailPageViewModel>();
         }
     }
 }
