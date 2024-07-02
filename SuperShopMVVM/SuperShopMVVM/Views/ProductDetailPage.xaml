@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:i18n="clr-namespace:SuperShopMVVM.Helpers" 
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="{Binding Title}"
+             BackgroundColor="{StaticResource ColorBackground}"
              x:Class="SuperShopMVVM.Views.ProductDetailPage">
 
     <ScrollView>
@@ -47,7 +49,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="Name" />
+                    Text="{i18n:Translate Name}" />
                 <Label
                     Grid.Row="0"
                     Grid.Column="1"
@@ -57,7 +59,7 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="Price" />
+                    Text="{i18n:Translate Price}" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
@@ -67,7 +69,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="LastPurchase" />
+                    Text="{i18n:Translate LastPurchase}" />
                 <Label
                     Grid.Row="2"
                     Grid.Column="1"
@@ -77,7 +79,7 @@
                     Grid.Row="3"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="LastSale" />
+                    Text="{i18n:Translate LastSale}" />
                 <Label
                     Grid.Row="3"
                     Grid.Column="1"
@@ -87,7 +89,7 @@
                     Grid.Row="4"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="IsAvailable"
+                    Text="{i18n:Translate IsAvailable}"
                     VerticalOptions="Center" />
                 <CheckBox
                     Grid.Row="4"
@@ -100,7 +102,7 @@
                     Grid.Row="5"
                     Grid.Column="0"
                     FontAttributes="Bold"
-                    Text="Stock" />
+                    Text="{i18n:Translate Stock}" />
                 <Label
                     Grid.Row="5"
                     Grid.Column="1"
@@ -111,7 +113,7 @@
                 BackgroundColor="Navy"
                 Command="{Binding AddToCartBinding}"
                 CornerRadius="10"
-                Text="AddToCart"
+                Text="{i18n:Translate AddToCart}"
                 TextColor="White"
                 VerticalOptions="EndAndExpand" />
         

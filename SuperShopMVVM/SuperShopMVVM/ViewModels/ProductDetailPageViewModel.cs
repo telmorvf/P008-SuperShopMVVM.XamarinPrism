@@ -1,24 +1,19 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
+﻿using Prism.Navigation;
 using SuperShopMVVM.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SuperShopMVVM.ViewModels
 {
-	public class ProductDetailPageViewModel : ViewModelBase
-	{
+    public class ProductDetailPageViewModel : ViewModelBase
+    {
         private readonly INavigationService _navigationService;
         private ProductResponse _product;
 
         public ProductDetailPageViewModel(
             INavigationService navigationService
-            ) 
+            )
             : base(navigationService)
         {
-            _navigationService = navigationService; 
+            _navigationService = navigationService;
         }
 
         public ProductResponse Product

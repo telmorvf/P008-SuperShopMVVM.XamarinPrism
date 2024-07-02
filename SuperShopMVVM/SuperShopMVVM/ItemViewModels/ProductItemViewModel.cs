@@ -2,9 +2,6 @@
 using Prism.Navigation;
 using SuperShopMVVM.Models;
 using SuperShopMVVM.Views;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SuperShopMVVM.ItemViewModels
 {

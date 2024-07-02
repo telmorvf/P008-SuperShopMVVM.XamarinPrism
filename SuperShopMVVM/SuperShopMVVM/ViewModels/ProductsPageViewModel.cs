@@ -1,11 +1,9 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using SuperShopMVVM.Helpers;
 using SuperShopMVVM.ItemViewModels;
 using SuperShopMVVM.Models;
 using SuperShopMVVM.Services;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -88,7 +86,7 @@ namespace SuperShopMVVM.ViewModels
             string url = App.Current.Resources["UrlAPI"].ToString();
 
             Response response = await _apiService.GetListAsync<ProductResponse>(url, "/api", "/Products/GetProducts");
-            
+
             IsRunning = false;
 
             if (!response.IsSuccess)
@@ -96,7 +94,7 @@ namespace SuperShopMVVM.ViewModels
                 await App.Current.MainPage.DisplayAlert(
                     //"Error",
                     Languages.Error,
-                    response.Message, 
+                    response.Message,
                     //"Accept"
                     Languages.Accept
                     );
@@ -111,7 +109,7 @@ namespace SuperShopMVVM.ViewModels
             if (string.IsNullOrEmpty(Search))
             {
                 Products = new ObservableCollection<ProductItemViewModel>
-                    (_myProducts.Select(p=>
+                    (_myProducts.Select(p =>
                     new ProductItemViewModel(_navigationService)
                     {
                         Id = p.Id,
