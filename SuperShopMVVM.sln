@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperShopMVVM", "SuperShopMVVM\SuperShopMVVM\SuperShopMVVM.csproj", "{290CF3C9-E11C-45F1-97DE-2C623A7DBA4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperShopMVVM", "SuperShopMVVM\SuperShopMVVM\SuperShopMVVM.csproj", "{290CF3C9-E11C-45F1-97DE-2C623A7DBA4F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperShopMVVM.Android", "SuperShopMVVM\SuperShopMVVM.Android\SuperShopMVVM.Android.csproj", "{59FCBF9D-A513-44AC-89DE-15D7D98DD10A}"
 EndProject
@@ -114,6 +114,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_PrefixTranslations = False
 		SolutionGuid = {201008C4-0B87-4E05-AE5C-996E12F29529}
 	EndGlobalSection
 EndGlobal

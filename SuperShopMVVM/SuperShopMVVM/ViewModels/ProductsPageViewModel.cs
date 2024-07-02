@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using SuperShopMVVM.Helpers;
 using SuperShopMVVM.ItemViewModels;
 using SuperShopMVVM.Models;
 using SuperShopMVVM.Services;
@@ -31,7 +32,7 @@ namespace SuperShopMVVM.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Product Page";
+            Title = Languages.ProductsPage;
             LoadProductsAsync();
         }
 
@@ -71,9 +72,13 @@ namespace SuperShopMVVM.ViewModels
                 Device.BeginInvokeOnMainThread(async () =>
                 {
                     await App.Current.MainPage.DisplayAlert(
-                        "Error", 
-                        "Check internet connection", 
-                        "Accept");
+                        //"Error", 
+                        //"Check internet connection", 
+                        //"Accept"
+                        Languages.Error,
+                        Languages.ConnectionError,
+                        Languages.Accept
+                        );
                 });
                 return;
             }
@@ -88,7 +93,13 @@ namespace SuperShopMVVM.ViewModels
 
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    //"Error",
+                    Languages.Error,
+                    response.Message, 
+                    //"Accept"
+                    Languages.Accept
+                    );
                 return;
             }
             _myProducts = (List<ProductResponse>)response.Result;
