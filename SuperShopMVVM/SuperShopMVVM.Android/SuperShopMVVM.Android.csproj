@@ -34,11 +34,15 @@
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidDexTool>d8</AndroidDexTool>
     <AndroidUseAapt2>true</AndroidUseAapt2>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,7 +127,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_action_menu.png" />
     <AndroidResource Include="Resources\drawable\ic_card_giftcard.png" />
-    <Content Include="Resources\drawable\ic_exit_to_app.png" />
+    <AndroidResource Include="Resources\drawable\ic_exit_to_app.png" />
     <AndroidResource Include="Resources\drawable\ic_history.png" />
     <AndroidResource Include="Resources\drawable\ic_person.png" />
     <AndroidResource Include="Resources\drawable\ic_shopping_cart.png" />
